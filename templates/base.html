@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/app.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/media.css' %}">
+  </head>
+  <body>
+    <header>
+      <h4>
+        Codeprof Academy
+      </h4>
+      <nav class="nav">
+        <a href="/">Home</a>
+        <a href="/aboutus">About Us</a>
+        <a href="/courses">Courses</a>
+        <a href="/test">Test</a>
+        <a href="{% url 'home' %}">Register</a>
+        <a href="/login">Login</a>
+        <a href="/contact">Contact Us</a>
+      </nav>
+      <div class="mobile-nav">
+        <img src="{% static 'images/Menu.svg'%}" alt="">
+      </div>
+    </header>
+    <main>
+        {% block content  %}
+        {% endblock %}
+    </main>
+    <footer>
+      <p>&copy; copyright 2024 developed by umar.dev</p>
+    </footer>
+    <script src="{% static 'js/app.js'%}"></script>
+  </body>
+</html>

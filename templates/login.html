@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+  login to Codeprof Academy
+{% endblock %}
+
+{% block content %}
+  <section class="main">
+    <form method="post" action="{% url 'login' %}" class="logForm">
+      {% csrf_token %}
+      <h3>Login</h3>
+      <div class="input-group">
+        <span class="error" id="username_error"></span>
+        <input type="text" placeholder="Username" name="username" id="username" />
+      </div>
+      <div class="input-group">
+        <span class="error" id="password_error"></span>
+        <input type="password" placeholder="Password" name="password" id="password" />
+        <img src="{% static 'images/show.png' %}" alt="" class="password_toggle">
+      </div>
+      <button type="submit">Login</button>
+      <p>
+        new member? <a href="{% url 'home' %}">create account</a>
+      </p>
+    </form>
+  </section>
+{% endblock %}

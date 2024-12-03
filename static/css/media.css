@@ -1,0 +1,94 @@
+@media (max-width: 678px) {
+  header {
+    height: 80px;
+    width: 100%;
+    padding: 10px;
+  }
+  
+  header nav {
+    position: absolute;
+    top: 80px;
+    right: -100%;
+    width: 50%;
+    height: 100vh;
+    background-color: white;
+    transition: left 0.5s ease-in-out;
+    z-index: 100;
+    flex-direction: column;
+    display: none;
+  }
+  .mobile-nav {
+    display: flex;
+  }
+  .main > form {
+    height: fit-content;
+  }
+
+  form > h3 {
+    margin-top: 50px;
+  }
+
+  .upload_card {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    transform: translateX(-40%);
+    transition: transform 0.5s ease-in-out;
+    z-index: 0;
+    margin-left: 0px;
+    border-radius: 5px;
+    width: 90%;
+    height: 200px;
+  }
+
+  .mobile_slider {
+    display: flex;
+    z-index: 100;
+  }
+
+  .proceed {
+    flex-direction: column;
+  }
+
+  .close_proceed {
+    width: 100px;
+    height: 100px;
+  }
+
+  .proceed_card {
+    width: 250px;
+    height: 250px;
+  }
+
+  .illustrate_success {
+    width: 100px !important;
+  }
+
+  .proceed_card > a {
+    width: fit-content;
+    padding: 8px 50px;
+  }
+
+  div.result {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  div.quiz {
+    width: 100%;
+    height: 450px;
+}
+
+div.question-area {
+    padding: 80px 10px;
+  }
+  
+
+  footer {
+    position: absolute;
+    bottom: 0;
+  }
+}

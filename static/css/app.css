@@ -1,0 +1,562 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-decoration: none;
+}
+
+body {
+  background: skyblue;
+}
+
+header {
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 10px;
+}
+
+header h4 {
+  font-size: 20px;
+  font-weight: 200;
+}
+
+header nav {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.mobile-nav{
+  display:none;
+}
+
+.slide_mobile{
+  right: 0;
+  display: flex;
+}
+
+nav a {
+  color: black;
+  transition: 0.5s ease-in-out;
+}
+
+nav a:hover {
+  color: #e3e3e3;
+}
+
+main {
+  width: 100%;
+  height: calc(100vh - 120px);
+  padding: 30px;
+}
+
+section.main {
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.main > form {
+  width: 500px;
+  min-height: fit-content;
+  background-color: white;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px 20px;
+  gap: 10px;
+  position: relative;
+}
+
+form > div.upload {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  cursor: pointer;
+  animation: bounce 5s infinite;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+div.upload p {
+  font-size: 10px;
+  color: white;
+  position: absolute;
+  top: 15px;
+  right: 50px;
+}
+
+form > h3 {
+  font-size: 30px;
+  font-weight: 200;
+  text-transform: capitalize;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 5px;
+  position: relative;
+}
+
+.input-group > input {
+  width: 100%;
+  outline: none;
+  border: 1px solid #eee;
+  height: 45px;
+  padding-left: 5px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.input-group > img.password_toggle {
+  width: 20px !important;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.input-group > .error {
+  align-self: flex-start;
+  color: red;
+  font-size: 10px;
+}
+
+form > button {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  border: none;
+  background-color: orange;
+  color: white;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+form > p {
+  font-size: 16px;
+  text-transform: capitalize;
+}
+
+form > p > a {
+  color: orange;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.upload_card {
+  background-color: rgb(230, 201, 163);
+  width: 400px;
+  height: 200px;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0;
+  position: absolute;
+  top: 0;
+  margin-left: 104px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  transition: 0.5s ease-in-out;
+  z-index: -111;
+}
+
+.upload_card > .upload-btn {
+  color: green;
+  cursor: pointer;
+  width: fit-content;
+  padding: 10px;
+  border-radius: 5px;
+  transition: 0.5s ease-in-out;
+}
+
+.profile-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: whitesmoke;
+  object-fit: cover;
+}
+
+.upload-btn:hover {
+  background-color: green;
+  color: white;
+}
+
+.proceed {
+  width: 100%;
+  margin: 0 auto;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  z-index: 1000 !important;
+}
+
+.close_proceed {
+  width: 250px;
+  height: 250px;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+.proceed_card {
+  width: 400px;
+  height: 400px;
+  background-color: white;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.proceed_card > img {
+  transition: 0.5s ease-out;
+}
+
+.illustrate_success {
+  width: 250px !important;
+}
+
+.proceed_card > a {
+  position: absolute;
+  width: fit-content;
+  padding: 8px 40px;
+  background-color: orange;
+  border-radius: 5px;
+  color: white;
+  left: 50%;
+  bottom: -5%;
+  transform: translateX(-50%);
+}
+
+section.start {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div.actionbtn {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background-color: crimson;
+  width: fit-content;
+  padding: 15px 30px;
+  border-radius: 5px;
+  color: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+div.actionbtn:hover {
+  box-shadow: crimson 0px 3px 10px;
+}
+
+div.decision {
+  width: 100%;
+  height: 100%;
+  display: none;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+div.decision > h3 {
+  width: 400px;
+  padding: 20px 30px;
+  font-size: 24px;
+  background-color: crimson;
+  color: #fff;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: crimson 0px 3px 10px;
+}
+
+div.decision > article {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+div.decision > article > button {
+  width: fit-content;
+  padding: 20px 30px;
+  background: transparent;
+  border: 1px solid crimson;
+  outline: none;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 400;
+  transition: 0.5s ease-in;
+}
+
+div.decision > article > button:hover {
+  background: crimson;
+  color: #fff;
+}
+
+div.quiz {
+  width: 80%;
+  height: 400px;
+  display: none;
+  background-color: #fff;
+  position: relative;
+}
+
+div.quiz > div.quiz_type {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  top: 0;
+  left: 0;
+  background-color: #e3e3e3;
+}
+
+div.quiz > div.timer {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  top: 0;
+  right: 0;
+  background-color: green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+}
+
+div.question-area {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+  height: 100%;
+  padding: 50px 40px;
+}
+
+form.response {
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-left: 10px;
+  padding-bottom: 70px;
+  border-bottom: 1px solid #eee;
+}
+
+form.response > span {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+form.response > span > option {
+  cursor: pointer;
+}
+
+form.response > span > p:hover {
+  color: pink;
+}
+
+button.response-submit {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #ccc;
+  cursor: pointer;
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  color: crimson;
+}
+
+button.response-submit:hover {
+  background-color: crimson;
+  color: white;
+}
+
+div.progression {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding-top: 20px;
+}
+
+div.progression > span.dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 1px solid crimson;
+  /* background-color: transparent; */
+}
+
+.filled {
+  background-color: crimson;
+}
+
+div.result {
+  width: 80%;
+  height: 400px;
+  display: none;
+  flex-direction: column;
+  background: #fff url("../images/codeprof.jpg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 0 40px;
+}
+
+div.result > div.brand {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+div.result > div.brand > span {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+div.result > div.brand > span > img {
+  width: 50px;
+}
+
+div.result > div.brand > span > h3 {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+div.result > div.brand > img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.display_result {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.display_result > div {
+  width: 100%;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+}
+
+
+.display_result > div > p{
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-weight: bold;
+}
+
+.display_result > div > span{
+  width: 50%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-weight: 100;
+}
+
+.display_result > div:nth-child(even) {
+  background-color: rgba(204, 204, 204, 0.7);
+
+}
+
+div.utility {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+div.utility > img {
+  width: 30px;
+  cursor: pointer;
+}
+
+div.utility > img:hover {
+  transform: scale(1.2);
+}
+
+footer {
+  width: 100%;
+  height: 40px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+footer p {
+  font-size: 14px;
+}
+
+.slider {
+  transform: translateX(398px);
+  z-index: 1;
+}
+
+.show_proceed {
+  display: flex;
+}

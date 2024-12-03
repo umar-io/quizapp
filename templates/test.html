@@ -1,0 +1,88 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block title %} Take Test {%endblock %} 
+{% block content %}
+<section class="start">
+  <div class="actionbtn">
+    <img src="{% static 'images/jetpack.png' %}" alt="" />
+    <h3>start</h3>
+  </div>
+
+  <div class="decision">
+    <h3>Are you ready 😉 ?</h3>
+    <article>
+      <button id="yes">Yes</button>
+      <button id="no">No</button>
+    </article>
+  </div>
+
+  <div class="quiz">
+    <div class="quiz_type"></div>
+    <div class="timer">0</div>
+    <div class="question-area">
+      <h3></h3>
+      <form action="{% url 'test' %}" method="post" class="response">
+        {% csrf_token %}
+        <span>
+          <!-- <input type="radio" name="answer" value="" class="option"/>
+          <p class="answer_title"></p> -->
+        </span>
+        <button type="submit" class="response-submit"></button>
+      </form>
+      <div class="progression">
+        <!-- <span></span> -->
+      </div>
+    </div>
+  </div>
+
+  <div class="result">
+    <div class="brand">
+      <span>
+        <img src="{% static 'images/codeprof.jpg' %}" alt="" />
+        <h4>Codeprof Academy</h4>
+      </span>
+      <img src="../media/{{user.image}}" alt="" />
+    </div>
+    <div class="display_result">
+      <div>
+        <p>Username</p>
+        <span id="username">{{user.username}}</span>
+      </div>
+      <div>
+        <p>Email</p>
+        <span id="email">{{user.email}}</span>
+      </div>
+      <div>
+        <p>Total Questions</p>
+        <span id="total-questions">{{question_length}}</span>
+      </div>
+      <div>
+        <p>Correct Answers</p>
+        <span id="correct-answers">{{user.answer_correct}}</span>
+      </div>
+      <div>
+        <p>Score</p>
+        <span id="score">{{user.score}}</span>
+      </div>
+      <div>
+        <p>Percentage</p>
+        <span id="percentage">{{user.percentage}}</span>
+      </div>
+      <div>
+        <p>Grade</p>
+        <span id="grade">{{user.grade}}</span>
+      </div>
+      <div>
+        <p>Remarks</p>
+        <span id="remarks">{{user.remark}}</span>
+      </div>
+    </div>
+    <div class="utility">
+      <img src="{% static 'images/print.png' %}" alt="" />
+      <img src="{% static 'images/download.svg' %}" alt="" />
+      <img src="{% static 'images/Share.svg' %}" alt="" />
+      <img src="{% static 'images/cancel.png' %}" alt="" class="logout"/>
+    </div>
+  </div>
+</section>
+{% endblock %}
